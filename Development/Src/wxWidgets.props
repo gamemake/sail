@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories Condition="'$(Platform)' == 'Win32'">$(SolutionDir)..\External\wxWidgets-3.0\lib\VC2013_Win32\include;$(SolutionDir)..\External\wxWidgets-3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Platform)' == 'x64'">$(SolutionDir)..\External\wxWidgets-3.0\lib\VC2013_Win64\include;$(SolutionDir)..\External\wxWidgets-3.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories Condition="'$(Platform)' == 'Win32'">$(SolutionDir)..\External\wxWidgets-3.0\lib\VC2013_Win32</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(Platform)' == 'x64'">$(SolutionDir)..\External\wxWidgets-3.0\lib\VC2013_Win64</AdditionalLibraryDirectories>
+      <AdditionalDependencies Condition="'$(Configuration)' == 'Debug'">comctl32.lib;wxbase30ud.lib;wxmsw30ud_core.lib;wxmsw30ud_adv.lib;wxmsw30ud_propgrid.lib;wxpngd.lib;wxzlibd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Configuration)' == 'Release'">comctl32.lib;wxbase30u.lib ;wxmsw30u_core.lib ;wxmsw30u_adv.lib ;wxmsw30u_propgrid.lib ;wxpng.lib; wxzlib.lib; %(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>

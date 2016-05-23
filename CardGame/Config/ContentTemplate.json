@@ -1,0 +1,20 @@
+
+{
+	"enums" :
+	{
+	},
+	"templates" :
+	{
+		"Shop List" :
+		{
+			"type" : "CG_SHOPITEM",
+			"title" : 1,
+			"start" : 3,
+			"fields" :
+			[
+				{ "column" : "ID",		"field" : "shopitem_id" },
+				{ "column" : "PRICE",	"field" : "price" }
+			]
+		}
+	}
+}

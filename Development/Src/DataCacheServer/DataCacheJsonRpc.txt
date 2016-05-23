@@ -1,0 +1,58 @@
+
+DataCache Server JsonRpc Api:
+
+function	createAvatar
+argements	user_id, avatar_scope, avatar_name, avatar_desc, avatar_objs
+return		errcode, avatar_id, version
+			if(success) errcode = 0, avatar_id, version
+			if(failed)  errcode = -1
+remark		´´½¨Avatar, avatar_objs = [{'uuid':uuid, 'type':type, 'data':data}....]
+
+function	deleteAvatar
+argements	user_id, avatar_scope, avatar_id
+return		errcode, avatar_id, version
+			if(success) errcode = 0
+			if(failed£© errcode = -1
+remark		É¾³ýAvatar
+
+function	getAvatar
+argements	avatar_id
+return		errcode, avatar_id, avatar_objs [{xxx}]
+
+function	getAvatar
+argements	avatar_id
+return
+  success	{ "uuid:type" : {obj}, ... }
+  failed	""
+
+function	saveAvatar
+argements	avatar_id
+return		none
+
+function	clearAvatar
+argements	avatar_id
+return		none
+
+function	keepAlive
+argements	avatar_id
+return		none
+
+function	executeDDL
+argements	avatar_id, method_name, data
+return		none
+
+function	createObject
+argements	avatar_id, uuid, type, data
+return		none
+
+function	updateObject
+argements	avatar_id, uuid, data
+return		none
+
+function	deleteObject
+argements	avatar_id, uuids
+return		none
+
+function	createObjectFromDB
+argements	avatar_id, uuid
+return		[uuid, type, data]

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Platform)-$(ConfigurationType)' == 'Win32-Application'">$(SolutionDir)..\..\Binaries\Win32\</OutDir>
+    <OutDir Condition="'$(Platform)-$(ConfigurationType)' == 'x64-Application'">$(SolutionDir)..\..\Binaries\Win64\</OutDir>
+    <OutDir Condition="'$(Platform)-$(ConfigurationType)' == 'Win32-DynamicLibrary'">$(SolutionDir)..\..\Binaries\Win32\</OutDir>
+    <OutDir Condition="'$(Platform)-$(ConfigurationType)' == 'x64-DynamicLibrary'">$(SolutionDir)..\..\Binaries\Win64\</OutDir>
+    <OutDir Condition="'$(Platform)-$(ConfigurationType)' == 'Win32-StaticLibrary'">$(SolutionDir)..\Intermediate\Win32-$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Platform)-$(ConfigurationType)' == 'x64-StaticLibrary'">$(SolutionDir)..\Intermediate\Win64-$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Platform)' == 'Win32'">$(SolutionDir)..\Intermediate\Win32-$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Platform)' == 'x64'">$(SolutionDir)..\Intermediate\Win64-$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)' == 'Debug'">$(ProjectName)_D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Lib>
+      <OutputFile Condition="'$(Platform)' == 'Win32'">$(SolutionDir)..\Intermediate\Win32-$(Configuration)\$(TargetName)$(TargetExt)</OutputFile>
+      <OutputFile Condition="'$(Platform)' == 'x64'">$(SolutionDir)..\Intermediate\Win64-$(Configuration)\$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+    <ClCompile>
+      <RuntimeLibrary Condition="'$(Configuration)' == 'Debug'">MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary Condition="'$(Configuration)' == 'Release'">MultiThreaded</RuntimeLibrary>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StructMemberAlignment>8Bytes</StructMemberAlignment>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <WarningLevel>Level4</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>iphlpapi.lib;psapi.lib;ws2_32.lib;wininet.lib;rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>

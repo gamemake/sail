@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories Condition="'$(Platform)' == 'Win32'">$(SolutionDir)..\External\mysql\win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Platform)' == 'x64'">$(SolutionDir)..\External\mysql\winx64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories Condition="'$(Platform)-$(Configuration)' == 'Win32-Debug'">  $(SolutionDir)..\External\mysql\win32\lib\vs9\debug</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(Platform)-$(Configuration)' == 'Win32-Release'">$(SolutionDir)..\External\mysql\win32\lib\vs9</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(Platform)-$(Configuration)' == 'x64-Debug'">    $(SolutionDir)..\External\mysql\winx64\lib\vs9\debug</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories Condition="'$(Platform)-$(Configuration)' == 'x64-Release'">  $(SolutionDir)..\External\mysql\winx64\lib\vs9</AdditionalLibraryDirectories>
+      <AdditionalDependencies>mysqlclient.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>

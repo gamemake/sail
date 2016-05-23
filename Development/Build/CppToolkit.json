@@ -1,0 +1,32 @@
+{
+	"cc_flags.release" : ["-O2"],
+	"cc_flags.debug" : ["-g"],
+	"cpp_flags" : ["-std=c++11", "-stdlib=libc++"],
+	"incs" : [],
+	"defs" : [],
+	"libs" : [],
+	"lib_dirs" : [],
+
+	"defs.debug" : ["_DEBUG"],
+	"defs.release" : ["NODEBUG"],
+	"defs.win32" : ["_WIN32"],
+	"defs.linux" : ["_LINUX"],
+	"defs.freebsd" : ["_FREEBSD"],
+	"defs.darwin" : ["_DARWIN"],
+
+	"third_deps.darwin" : ["wxWidgets", "mysql"],
+	"incs.mysql.darwin" : ["/usr/local/include"],
+	"defs.mysql.darwin" : [],
+	"libs.mysql.darwin" : ["mysqlclient"],
+	"lib_dirs.mysql.darwin" : ["/usr/local/lib"],
+	"incs.wxWidgets.darwin" : ["/usr/local/lib/wx/include/osx_cocoa-unicode-3.0", "/usr/local/include/wx-3.0"],
+	"defs.wxWidgets.darwin" : ["_FILE_OFFSET_BITS=64", "wxDEBUG_LEVEL=0", "WXUSINGDLL", "__WXMAC__", "__WXOSX__", "__WXOSX_COCOA__"],
+	"libs.wxWidgets.darwin" : ["wx_baseu-3.0", "wx_osx_cocoau_core-3.0", "wx_osx_cocoau_propgrid-3.0", "wx_osx_cocoau_aui-3.0", "wx_osx_cocoau_adv-3.0"],
+	"lib_dirs.wxWidgets.darwin" : ["/usr/local/lib"],
+	"frameworks.wxWidgets.darwin" : ["IOKit", "Carbon", "Cocoa", "AudioToolbox", "System", "OpenGL"],
+
+	"dll_flags.debug" : ["-g"],
+	"exe_flags.debug" : ["-g"],
+
+	"end" : []
+}
